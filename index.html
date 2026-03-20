@@ -42,11 +42,17 @@
       font-family: "Source Serif 4", serif;
     }
     h1 {
-      max-width: 920px;
+      max-width: 1080px;
       margin: 0 auto;
-      font-size: clamp(28px, 3.4vw, 42px);
-      line-height: 1.16;
+      font-size: clamp(24px, 2.7vw, 34px);
+      line-height: 1.18;
       text-align: center;
+    }
+    .title-line {
+      display: block;
+    }
+    .title-line:first-child {
+      white-space: nowrap;
     }
     .authors {
       margin-top: 18px;
@@ -178,6 +184,9 @@
       .venue {
         font-size: 24px;
       }
+      .title-line:first-child {
+        white-space: normal;
+      }
     }
   </style>
 </head>
@@ -185,8 +194,8 @@
   <main class="container">
     <section class="hero">
       <h1>
-        CLP: A Real-World Dataset of Contaminated Lens Protectors<br>
-        for Robust Semantic Segmentation
+        <span class="title-line">CLP: A Real-World Dataset of Contaminated Lens Protectors</span>
+        <span class="title-line">for Robust Semantic Segmentation</span>
       </h1>
 
       <div class="authors">
