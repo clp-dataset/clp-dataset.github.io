@@ -268,16 +268,7 @@
           </ul>
         </div>
 
-        <div class="placeholder" style="color: var(--text);">
-          <strong>Dataset Access</strong>
-          <p>The CLP dataset links and benchmark protocols are listed below.</p>
-          <ul style="margin-top: 12px;">
-            <li><a href="#" style="color:var(--accent); font-weight:600;">Download Dataset via Hugging Face Workspace</a></li>
-            <li><a href="#" style="color:var(--accent); font-weight:600;">Benchmark Evaluation Protocol</a></li>
-            <li><a href="#" style="color:var(--accent); font-weight:600;">Leaderboard / Submission URL</a></li>
-          </ul>
         </div>
-      </div>
     </section>
 
     <section id="experiments" class="section">
@@ -287,9 +278,9 @@
           <strong>Quantitative Results</strong>
           We benchmark 12 models across segmentation and restoration tasks. DINOv2 achieves the best overall mIoU (47.2%), while DiffUIR leads restoration with 27.92 dB PSNR. Domain Generalization methods consistently outperform Domain Adaptation despite having no access to contaminated training data.
           
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:16px 0;">
-            <img src="./assets/clp_seg_table.png" alt="Segmentation Table" style="width: 100%; border-radius: 10px;">
-            <img src="./assets/clp_res_table.png" alt="Restoration Table" style="width: 100%; border-radius: 10px;">
+          <div style="display:flex; flex-direction:column; gap:16px; margin:16px 0; align-items:center;">
+            <img src="./assets/clp_seg_table.png" alt="Segmentation Table" style="width: 100%; max-width: 800px; border-radius: 10px;">
+            <img src="./assets/clp_res_table.png" alt="Restoration Table" style="width: 100%; max-width: 800px; border-radius: 10px;">
           </div>
         </div>
 
@@ -318,6 +309,28 @@
       </div>
     </section>
 
+    <section class="section">
+      <h2>Dataset Access</h2>
+      <div class="grid">
+        <div class="placeholder">
+          <strong>Download</strong>
+          Coming Soon
+        </div>
+        <!-- Submission Placeholder (not needed for now)
+        <div class="placeholder">
+          <strong>Submission Placeholder</strong>
+          Put benchmark submission or leaderboard link here later.
+        </div>
+        -->
+        <!-- Code Placeholder (not needed for now)
+        <div class="placeholder">
+          <strong>Code Placeholder</strong>
+          Put training / evaluation code link here later.
+        </div>
+        -->
+      </div>
+    </section>
+    
     <section id="citation" class="section">
       <h2>Citation</h2>
       <div class="bibtex">
