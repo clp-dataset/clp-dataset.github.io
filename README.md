@@ -6,7 +6,7 @@ protector contaminated by different substances at four lens-to-protector distanc
 yielding 4,800 degraded images paired with their clean references and dense
 segmentation labels.
 
-## At a glance
+## Overview
 | | |
 |---|---|
 | Scenes (Case) | 600 — **train 480 / test 120** (disjoint scene split) |
@@ -17,7 +17,7 @@ segmentation labels.
 | Clean references | 600 (one per scene) |
 | License | CC BY 4.0 |
 
-### Naming convention
+### Naming rules
 Files are named `Case{ID}_{TYPE}_{DIST}.png`:
 - **TYPE**: `C` = clean, `M` = mud, `W` = water, `H` = humidity, `O` = original (clean reference, no `DIST`).
 - **DIST** = lens-to-protector distance in **millimeters**: `0 / 10 / 30 / 50` = **0 / 1 / 3 / 5 cm**.
