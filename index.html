@@ -133,12 +133,17 @@
 
       <h3 style="margin:0 0 .75rem; font-family:'Google Sans','Noto Sans',sans-serif; font-size:1.4rem; font-weight:600; color:#363636;">Collection Setup</h3>
       <img class="nf-img" src="./assets/figure3.png" alt="Collection Setup" style="border-radius:6px; max-width:860px; margin:0 auto;">
+      <img class="nf-img" src="./assets/clp_overview.png" alt="Dataset Overview" style="border-radius:6px; max-width:860px; margin:1.25rem auto 0;">
 
       <h3 style="margin:2.5rem 0 .75rem; font-family:'Google Sans','Noto Sans',sans-serif; font-size:1.4rem; font-weight:600; color:#363636;">Statistics</h3>
       <p style="margin:0 auto 1.25rem; max-width:800px; font-size:1.05rem; line-height:1.8; color:#4a4a4a;">
         600 scenes were captured across diverse indoor/outdoor environments, day/night conditions, and three camera angles (up, horizontal, down). The dataset contains <strong>4,800 degraded images</strong> (600 scenes &times; 2 refs &times; 4 distances), <strong>125 semantic classes</strong> with 19,203 annotated instances, and a 480 / 120 scene train/test split.
       </p>
       <img class="nf-img" src="./assets/figure4.png" alt="Statistics" style="border-radius:6px; max-width:860px; margin:0 auto;">
+      <div class="grid-2" style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:1.25rem;">
+        <img class="nf-img" src="./assets/clp_statistics_1.png" alt="Scene-level statistics" style="border-radius:6px;">
+        <img class="nf-img" src="./assets/clp_statistics_2.png" alt="Object distribution" style="border-radius:6px;">
+      </div>
 
       <h3 style="margin:2.5rem 0 .75rem; font-family:'Google Sans','Noto Sans',sans-serif; font-size:1.4rem; font-weight:600; color:#363636;">Analysis</h3>
       <p style="margin:0 auto; max-width:800px; font-size:1.05rem; line-height:1.8; color:#4a4a4a;">
@@ -153,26 +158,23 @@
     <div style="max-width:960px; margin:0 auto;">
       <h2 style="margin:0 0 1.5rem; text-align:center; font-family:'Google Sans','Noto Sans',sans-serif; font-size:2rem; font-weight:600; color:#363636;">Experiments</h2>
 
-      <h3 style="margin:0 0 .75rem; font-family:'Google Sans','Noto Sans',sans-serif; font-size:1.4rem; font-weight:600; color:#363636;">Quantitative Results</h3>
+      <h3 style="margin:0 0 .75rem; font-family:'Google Sans','Noto Sans',sans-serif; font-size:1.4rem; font-weight:600; color:#363636;">Segmentation Results</h3>
       <p style="margin:0 0 1.25rem; font-size:1.05rem; line-height:1.8; text-align:justify; color:#4a4a4a;">
-        We benchmark 12 models across segmentation and restoration tasks. DINOv2 achieves the best overall mIoU (47.2%), while DiffUIR leads restoration with 27.92 dB PSNR. Domain Generalization methods consistently outperform Domain Adaptation despite having no access to contaminated training data.
+        DINOv2 achieves the best average mIoU (47.2%) across contamination types, while Domain Generalization methods consistently outperform Domain Adaptation methods without access to contaminated training images. Qualitative results show that segmentation quality degrades at larger lens-to-protector distances, but DINOv2 preserves coarse semantic structures even under severe mud contamination.
       </p>
       <div style="display:flex; flex-direction:column; gap:1.25rem; align-items:center;">
-        <img class="nf-img" src="./assets/clp_seg_table.png" alt="Segmentation Table" style="border-radius:6px; max-width:820px;">
-        <img class="nf-img" src="./assets/clp_res_table.png" alt="Restoration Table" style="border-radius:6px; max-width:820px;">
+        <img class="nf-img" src="./assets/clp_seg_table.png" alt="Segmentation Results Table" style="border-radius:6px; max-width:820px;">
+        <img class="nf-img" src="./assets/clp_seg_figure.png" alt="Segmentation Qualitative Results" style="border-radius:6px;">
       </div>
 
-      <h3 style="margin:2.5rem 0 .75rem; font-family:'Google Sans','Noto Sans',sans-serif; font-size:1.4rem; font-weight:600; color:#363636;">Segmentation Qualitative Results</h3>
+      <h3 style="margin:2.5rem 0 .75rem; font-family:'Google Sans','Noto Sans',sans-serif; font-size:1.4rem; font-weight:600; color:#363636;">Restoration Results</h3>
       <p style="margin:0 0 1.25rem; font-size:1.05rem; line-height:1.8; text-align:justify; color:#4a4a4a;">
-        Segmentation quality degrades significantly at larger distances due to increased blur and occlusion. DINOv2 maintains coarse semantic structures even at 5 cm, while most other models fail under severe mud contamination.
+        DiffUIR achieves the best overall restoration performance with 27.92 dB PSNR, followed by UniRestore with 26.85 dB. DiffUIR produces the strongest visual restoration on water and condensation, but visible artifacts remain in severely degraded regions.
       </p>
-      <img class="nf-img" src="./assets/clp_seg_figure.png" alt="Segmentation Qualitative Results" style="border-radius:6px;">
-
-      <h3 style="margin:2.5rem 0 .75rem; font-family:'Google Sans','Noto Sans',sans-serif; font-size:1.4rem; font-weight:600; color:#363636;">Restoration Qualitative Results</h3>
-      <p style="margin:0; font-size:1.05rem; line-height:1.8; text-align:justify; color:#4a4a4a;">
-        DiffUIR produces the best visual restoration, but visible artifacts remain in heavily degraded regions.
-      </p>
-      <img class="nf-img" src="./assets/figure9.png" alt="Restoration Qualitative Results" style="border-radius:6px; margin-top:1.25rem;">
+      <div style="display:flex; flex-direction:column; gap:1.25rem; align-items:center;">
+        <img class="nf-img" src="./assets/clp_res_table.png" alt="Restoration Results Table" style="border-radius:6px; max-width:820px;">
+        <img class="nf-img" src="./assets/figure9.png" alt="Restoration Qualitative Results" style="border-radius:6px;">
+      </div>
     </div>
   </section>
 
