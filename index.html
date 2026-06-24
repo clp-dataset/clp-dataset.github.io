@@ -139,7 +139,6 @@
       <p style="margin:0 auto 1.25rem; max-width:800px; font-size:1.05rem; line-height:1.8; color:#4a4a4a;">
         600 scenes were captured across diverse indoor/outdoor environments, day/night conditions, and three camera angles (up, horizontal, down). The dataset contains <strong>4,800 degraded images</strong> (600 scenes &times; 2 refs &times; 4 distances), <strong>125 semantic classes</strong> with 19,203 annotated instances, and a 480 / 120 scene train/test split.
       </p>
-      <img class="nf-img" src="./assets/figure4.png" alt="Statistics" style="border-radius:6px; max-width:860px; margin:0 auto;">
       <div class="grid-2" style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:1.25rem;">
         <img class="nf-img" src="./assets/clp_statistics_1.png" alt="Scene-level statistics" style="border-radius:6px;">
         <img class="nf-img" src="./assets/clp_statistics_2.png" alt="Object distribution" style="border-radius:6px;">
@@ -149,7 +148,10 @@
       <p style="margin:0 auto; max-width:800px; font-size:1.05rem; line-height:1.8; color:#4a4a4a;">
         The scene-level and object-level distributions show that CLP covers balanced contamination types, viewpoints, places, and lighting conditions, while retaining the long-tailed object distribution typical of real semantic segmentation datasets.
       </p>
-      <img class="nf-img" src="./assets/figure5.png" alt="Analysis" style="border-radius:6px; max-width:860px; margin:1.25rem auto 0;">
+      <div style="display:flex; flex-direction:column; gap:1.25rem; align-items:center; margin-top:1.25rem;">
+        <img class="nf-img" src="./assets/figure4.png" alt="Dataset Analysis" style="border-radius:6px; max-width:860px;">
+        <img class="nf-img" src="./assets/figure5.png" alt="Distance Analysis" style="border-radius:6px; max-width:860px;">
+      </div>
     </div>
   </section>
 
