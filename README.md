@@ -86,6 +86,11 @@ register_clp_seg()                      # registers clp_semseg_<split>
 
 ---
 
+
+## License
+This dataset is released for research and educational purposes only. Commercial use, redistribution, or derivative dataset release requires prior written permission from the authors.
+
+
 ## Citation
 ```bibtex
 @InProceedings{Park_2026_CVPR,
@@ -97,4 +102,3 @@ register_clp_seg()                      # registers clp_semseg_<split>
     pages     = {3794-3804}
 }
 ```
-License: **CC BY 4.0**.
