@@ -106,12 +106,16 @@
       <h2 style="margin:0 0 1.5rem; text-align:center; font-family:'Google Sans','Noto Sans',sans-serif; font-size:2rem; font-weight:600; color:#363636;">Abstract</h2>
       <div style="max-width:800px; margin:0 auto;">
         <p style="margin:0; font-size:1.125rem; line-height:1.8; text-align:justify; color:#4a4a4a;">
-          The reliability of autonomous systems in real-world environments is mainly dependent on the robustness of their visual perception.
-          Although recent studies have advanced the handling of visual degradations, physical contaminants that adhere to the camera lens,
-          such as mud, water droplets, and condensation, remain largely underexplored. To this end, we introduce the CLP (Contaminated Lens Protector)
-          dataset, a real-world benchmark designed to evaluate perception performance under realistic lens-protector contamination. The CLP dataset offers
-          degraded images across multiple types of contamination and various lens-to-protector distances, along with dense semantic segmentation masks and
-          aligned restoration targets.
+          The reliability of autonomous systems in real-world environments depends heavily on the robustness of visual perception.
+          However, physical contaminants that adhere to the camera lens or lens protector, such as <strong>mud</strong>, <strong>water droplets</strong>, and <strong>condensation</strong>, remain largely underexplored compared with common synthetic corruptions or weather degradations.
+        </p>
+        <p style="margin:1.1rem 0 0; font-size:1.125rem; line-height:1.8; text-align:justify; color:#4a4a4a;">
+          We introduce <strong>CLP (Contaminated Lens Protector)</strong>, a real-world benchmark for evaluating semantic segmentation and image restoration under realistic lens-protector contamination.
+          CLP contains <strong>600 indoor/outdoor scenes</strong> captured at <strong>0, 1, 3, and 5 cm</strong> lens-to-protector distances, yielding <strong>4,800 degraded images</strong> paired with clean references.
+        </p>
+        <p style="margin:1.1rem 0 0; font-size:1.125rem; line-height:1.8; text-align:justify; color:#4a4a4a;">
+          In addition to paired restoration targets, CLP provides dense semantic segmentation annotations with <strong>125 object categories</strong> and <strong>19,203 annotated instances</strong>.
+          Through this benchmark, we study how modern segmentation and restoration models behave under real lens-protector contamination and highlight the need for task-aware robust perception in safety-critical vision systems.
         </p>
       </div>
     </div>
