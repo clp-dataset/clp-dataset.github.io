@@ -2,228 +2,110 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>CLP Dataset</title>
-  <meta name="description" content="CLP project page template">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CLP Dataset — CVPR 2026</title>
+  <meta name="description" content="CLP: A Real-World Dataset of Contaminated Lens Protectors for Robust Semantic Segmentation">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
-    :root {
-      --text: #1b1d21;
-      --muted: #616b76;
-      --line: #e8eaee;
-      --soft: #f7f8fa;
-      --accent: #2b6cb0;
-      --width: min(960px, calc(100vw - 32px));
-    }
     * { box-sizing: border-box; }
+    body { margin: 0; color:#4a4a4a; font-family:'Noto Sans', system-ui, -apple-system, sans-serif; background:#fff; font-size:16px; line-height:1.5; }
     html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      color: var(--text);
-      font-family: "Source Sans 3", system-ui, sans-serif;
-      background: #ffffff;
-    }
-    a { color: inherit; text-decoration: none; }
-    .container {
-      width: var(--width);
-      margin: 0 auto;
-    }
-    .hero {
-      padding: 56px 0 24px;
-      text-align: center;
-    }
-    h1, h2, h3 {
-      margin: 0;
-      letter-spacing: -0.03em;
-    }
-    h1 {
-      max-width: 1080px;
-      margin: 0 auto;
-      font-size: clamp(24px, 2.7vw, 34px);
-      line-height: 1.18;
-      text-align: center;
-      font-weight: 700;
-    }
-    .title-line {
-      display: block;
-    }
-    .title-line:first-child {
-      white-space: nowrap;
-    }
-    .authors {
-      margin-top: 18px;
-      font-size: 21px;
-      line-height: 1.9;
-    }
-    .affils {
-      margin-top: 6px;
-      color: var(--muted);
-      font-size: 18px;
-      line-height: 1.8;
-    }
-    .venue {
-      margin-top: 10px;
-      font-size: 28px;
-      font-weight: 700;
-    }
-    .buttons {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 24px;
-    }
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 11px 18px;
-      border: 1px solid #d7dce3;
-      border-radius: 999px;
-      background: #fff;
-      color: var(--text);
-      font-weight: 700;
-    }
-    .button.primary {
-      background: #111827;
-      border-color: #111827;
-      color: #fff;
-    }
-    .section {
-      padding: 28px 0 0;
-    }
-    .section h2 {
-      margin-bottom: 10px;
-      font-size: 34px;
-      text-align: center;
-      font-weight: 700;
-    }
-    .section p {
-      margin: 0;
-      font-size: 18px;
-      line-height: 1.85;
-      color: var(--text);
-    }
-    .section .muted {
-      color: var(--muted);
-    }
-    .paper-block,
-    .placeholder,
-    .bibtex {
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background: var(--soft);
-      padding: 22px;
-    }
-    .placeholder {
-      color: var(--muted);
-    }
-    .placeholder strong {
-      display: block;
-      margin-bottom: 10px;
-      color: var(--text);
-      font-size: 18px;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-top: 18px;
-    }
-    .grid-2 {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-      margin-top: 18px;
-    }
-    ul {
-      margin: 10px 0 0;
-      padding-left: 20px;
-      color: var(--muted);
-      line-height: 1.8;
-      font-size: 17px;
-    }
-    pre {
-      margin: 0;
-      overflow-x: auto;
-      font-size: 14px;
-      line-height: 1.7;
-      color: #f9fafb;
-      background: #111827;
-      padding: 18px;
-      border-radius: 14px;
-    }
-    .copy-row {
-      margin-top: 14px;
-      text-align: left;
-    }
-    .footer {
-      padding: 48px 0 60px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.8;
-    }
+    a { text-decoration: none; }
+    sup { font-size: .65em; }
+    .nf-author-link:hover { text-decoration: underline; }
+    .nf-btn:hover { background:#2b2b2b !important; }
+    .nf-img { width:100%; display:block; }
+    .nf-dropdown-menu { display:none; }
+    .nf-dropdown:hover .nf-dropdown-menu { display:block; }
+    .nf-dropdown-menu a:hover { background:#f5f5f5; }
     @media (max-width: 820px) {
-      .grid,
-      .grid-2 {
-        grid-template-columns: 1fr;
-      }
-      .hero {
-        padding-top: 36px;
-      }
-      .authors {
-        font-size: 18px;
-      }
-      .affils {
-        font-size: 16px;
-      }
-      .venue {
-        font-size: 24px;
-      }
-      .title-line:first-child {
-        white-space: normal;
-      }
+      .title-nowrap { white-space: normal !important; }
+      .grid-2 { grid-template-columns: 1fr !important; }
     }
   </style>
 </head>
 <body>
-  <main class="container">
-    <section class="hero">
-      <h1>
-        <span class="title-line">CLP: A Real-World Dataset of Contaminated Lens Protectors</span>
-        <span class="title-line">for Robust Semantic Segmentation</span>
+<main style="color:#4a4a4a; font-family:'Noto Sans', system-ui, -apple-system, sans-serif; background:#fff; font-size:16px; line-height:1.5;">
+
+  <!-- ===== NAVBAR ===== -->
+  <nav style="display:flex; align-items:center; justify-content:center; gap:.5rem; height:3.25rem; padding:0 1rem; border-bottom:1px solid #ededed; background:#fff;">
+    <a href="#" style="display:inline-flex; align-items:center; justify-content:center; width:3.25rem; height:3.25rem; color:#363636; font-size:1.15rem;" title="Home">
+      <i class="fa-solid fa-house"></i>
+    </a>
+    <div class="nf-dropdown" style="position:relative;">
+      <a href="#" style="display:inline-flex; align-items:center; gap:.4rem; height:3.25rem; padding:0 .9rem; color:#363636; font-size:1rem;">
+        More Research <i class="fa-solid fa-angle-down" style="font-size:.8rem;"></i>
+      </a>
+      <div class="nf-dropdown-menu" style="position:absolute; left:0; top:3.25rem; min-width:240px; background:#fff; border:1px solid #ededed; border-radius:6px; box-shadow:0 8px 24px rgba(10,10,10,.1); padding:.5rem 0; z-index:30;">
+        <a href="https://sidl-benchmark.github.io/" style="display:block; padding:.5rem 1rem; color:#363636; font-size:.95rem;">SIDL Benchmark</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section style="padding:3rem 1.5rem 1.5rem;">
+    <div style="max-width:960px; margin:0 auto; text-align:center;">
+      <h1 style="margin:0 auto; max-width:1100px; font-family:'Google Sans','Noto Sans',sans-serif; font-size:clamp(22px,2.9vw,38px); line-height:1.22; font-weight:700; color:#363636;">
+        <span class="title-nowrap" style="display:block; white-space:nowrap;">CLP: A Real-World Dataset of Contaminated Lens Protectors</span>
+        <span style="display:block;">for Robust Semantic Segmentation</span>
       </h1>
 
-      <div class="authors">
-        Sungyong Park<sup>1</sup>, Sooyoung Choi<sup>1</sup>, Hyunseo Koh<sup>1</sup>, Youngjae Choi<sup>1</sup>, Heewon Kim<sup>1,2</sup>
+      <div style="margin-top:1.4rem; font-family:'Google Sans','Noto Sans',sans-serif; font-size:1.25rem; line-height:1.6; color:#363636;">
+        <span style="display:inline-block; margin:0 .55rem;"><a class="nf-author-link" href="https://scholar.google.com/citations?user=hoVU3n8AAAAJ&hl=ko" target="_blank" rel="noopener" style="color:hsl(204,86%,53%);">Sungyong Park</a><sup>1,2,*</sup></span>
+        <span style="display:inline-block; margin:0 .55rem;"><a class="nf-author-link" href="https://scholar.google.com/citations?user=QlFwPbwAAAAJ&hl=ko" target="_blank" rel="noopener" style="color:hsl(204,86%,53%);">Sooyoung Choi</a><sup>1,2,*</sup></span>
+        <span style="display:inline-block; margin:0 .55rem;"><a class="nf-author-link" href="https://scholar.google.com/citations?user=Sg2taO0AAAAJ&hl=ko" target="_blank" rel="noopener" style="color:hsl(204,86%,53%);">Hyunseo Koh</a><sup>1,2</sup></span>
+        <span style="display:inline-block; margin:0 .55rem;"><a class="nf-author-link" href="#" style="color:hsl(204,86%,53%);">Youngjae Choi</a><sup>1</sup></span>
+        <span style="display:inline-block; margin:0 .55rem;"><a class="nf-author-link" href="https://scholar.google.com/citations?user=B1Yuz3gAAAAJ&hl=ko" target="_blank" rel="noopener" style="color:hsl(204,86%,53%);">Heewon Kim</a><sup>1,2</sup></span>
       </div>
 
-      <div class="affils">
-        <sup>1</sup> Soongsil University &nbsp;&nbsp; <sup>2</sup> Kairoba Inc.
+      <div style="margin-top:.55rem; font-family:'Google Sans','Noto Sans',sans-serif; font-size:1rem; color:#363636;">
+        * Denotes equal contribution
       </div>
 
-      <div class="venue">CVPR 2026</div>
-
-      <div class="buttons">
-        <a class="button primary" href="./paper.pdf">Paper</a>
-        <a class="button" href="#abstract">Abstract</a>
-        <a class="button" href="#dataset">Dataset</a>
-        <a class="button" href="#experiments">Experiments</a>
-        <a class="button" href="#citation">BibTeX</a>
+      <div style="margin-top:.75rem; font-family:'Google Sans','Noto Sans',sans-serif; font-size:1.1rem; color:#363636;">
+        <span style="display:inline-block; margin:0 .5rem;"><sup>1</sup>Soongsil University</span>
+        <span style="display:inline-block; margin:0 .5rem;"><sup>2</sup>Kairoba Inc.</span>
       </div>
 
-      <div style="margin-top: 32px; text-align: center;">
-        <img src="./assets/clp_teaser.png" alt="CLP Teaser" style="width: 100%; max-width: 850px; border-radius: 14px;">
-      </div>
-    </section>
+      <div style="margin-top:.6rem; font-family:'Google Sans','Noto Sans',sans-serif; font-size:1.25rem; font-weight:700; color:#555;">CVPR 2026</div>
 
-    <section id="abstract" class="section">
-      <h2>Abstract</h2>
-      <div class="paper-block">
-        <p>
+      <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:.5rem; margin-top:1.6rem;">
+        <a class="nf-btn" href="./paper.pdf" style="display:inline-flex; align-items:center; gap:.5rem; height:2.5em; padding:0 1.1em; border-radius:9999px; background:#363636; color:#fff; font-size:1rem; transition:background .15s;">
+          <i class="fa-solid fa-file-pdf"></i><span>Paper</span>
+        </a>
+        <a class="nf-btn" href="#" style="display:inline-flex; align-items:center; gap:.5rem; height:2.5em; padding:0 1.1em; border-radius:9999px; background:#363636; color:#fff; font-size:1rem; transition:background .15s;">
+          <i class="fa-solid fa-file-lines"></i><span>arXiv</span>
+        </a>
+        <a class="nf-btn" href="#" style="display:inline-flex; align-items:center; gap:.5rem; height:2.5em; padding:0 1.1em; border-radius:9999px; background:#363636; color:#fff; font-size:1rem; transition:background .15s;">
+          <i class="fa-brands fa-github"></i><span>Code</span>
+        </a>
+        <a class="nf-btn" href="#dataset" style="display:inline-flex; align-items:center; gap:.5rem; height:2.5em; padding:0 1.1em; border-radius:9999px; background:#363636; color:#fff; font-size:1rem; transition:background .15s;">
+          <i class="fa-solid fa-database"></i><span>Dataset</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TEASER ===== -->
+  <section style="padding:0 1.5rem 2rem;">
+    <div style="max-width:1040px; margin:0 auto;">
+      <img class="nf-img" src="./assets/clp_teaser.png" alt="CLP Teaser" style="border-radius:6px;">
+      <p style="margin:1.1rem auto 0; max-width:900px; text-align:center; font-size:1rem; color:#4a4a4a; line-height:1.7;">
+        The <strong>CLP dataset</strong> captures real lens-protector contamination &mdash; mud, water droplets, and condensation &mdash; across four lens-to-protector distances, paired with dense semantic segmentation masks and aligned restoration targets.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== ABSTRACT ===== -->
+  <section style="padding:3rem 1.5rem; border-top:1px solid #ededed;">
+    <div style="max-width:960px; margin:0 auto;">
+      <h2 style="margin:0 0 1.5rem; text-align:center; font-family:'Google Sans','Noto Sans',sans-serif; font-size:2rem; font-weight:600; color:#363636;">Abstract</h2>
+      <div style="max-width:800px; margin:0 auto;">
+        <p style="margin:0; font-size:1.125rem; line-height:1.8; text-align:justify; color:#4a4a4a;">
           The reliability of autonomous systems in real-world environments is mainly dependent on the robustness of their visual perception.
           Although recent studies have advanced the handling of visual degradations, physical contaminants that adhere to the camera lens,
           such as mud, water droplets, and condensation, remain largely underexplored. To this end, we introduce the CLP (Contaminated Lens Protector)
@@ -232,123 +114,93 @@
           aligned restoration targets.
         </p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="dataset" class="section">
-      <h2>Dataset</h2>
-      <div style="display:flex; flex-direction:column; gap:16px; margin-top:18px;">
-        <div class="placeholder" style="color: var(--text);">
-          <strong>Overview</strong>
+  <!-- ===== DATASET ===== -->
+  <section id="dataset" style="padding:3rem 1.5rem; border-top:1px solid #ededed;">
+    <div style="max-width:960px; margin:0 auto;">
+      <h2 style="margin:0 0 1rem; text-align:center; font-family:'Google Sans','Noto Sans',sans-serif; font-size:2rem; font-weight:600; color:#363636;">Dataset</h2>
+      <div style="max-width:800px; margin:0 auto 2rem;">
+        <p style="margin:0; font-size:1.125rem; line-height:1.8; text-align:justify; color:#4a4a4a;">
           CLP captures real lens-protector contamination using a custom 3D-printed smartphone holder that fixes glass plates at four precise distances in front of the camera lens.
-          
-          <div style="margin: 16px 0; text-align: center;">
-            <img src="./assets/clp_overview.png" alt="Dataset Overview" style="width: 100%; max-width: 750px; border-radius: 10px;">
-          </div>
-
-          <ul>
-            <li>3 contamination types: mud, water droplets, condensation</li>
-            <li>4 lens-to-protector distances: 0, 1, 3, 5 cm</li>
-            <li>Paired clean &amp; degraded images with dense semantic labels</li>
-          </ul>
-        </div>
-        
-        <div class="placeholder" style="color: var(--text);">
-          <strong>Statistics</strong>
-          
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:16px 0;">
-            <img src="./assets/clp_statistics_1.png" alt="Scene-level statistics" style="width: 100%; border-radius: 10px;">
-            <img src="./assets/clp_statistics_2.png" alt="Object distribution" style="width: 100%; border-radius: 10px;">
-          </div>
-
-          600 scenes captured across diverse indoor/outdoor environments, day/night, and three camera angles (up, horizontal, down).
-          <ul>
-            <li>4,800 degraded images (600 scenes × 2 refs × 4 distances)</li>
-            <li>125 semantic classes, 19,203 annotated instances</li>
-            <li>Train / Test split: 480 / 120 scenes</li>
-          </ul>
-        </div>
-
-        </div>
-    </section>
-
-    <section id="experiments" class="section">
-      <h2>Experiments</h2>
-      <div style="display:flex; flex-direction:column; gap:16px; margin-top:18px;">
-        <div class="placeholder" style="color: var(--text);">
-          <strong>Quantitative Results</strong>
-          We benchmark 12 models across segmentation and restoration tasks. DINOv2 achieves the best overall mIoU (47.2%), while DiffUIR leads restoration with 27.92 dB PSNR. Domain Generalization methods consistently outperform Domain Adaptation despite having no access to contaminated training data.
-          
-          <div style="display:flex; flex-direction:column; gap:16px; margin:16px 0; align-items:center;">
-            <img src="./assets/clp_seg_table.png" alt="Segmentation Table" style="width: 100%; max-width: 800px; border-radius: 10px;">
-            <img src="./assets/clp_res_table.png" alt="Restoration Table" style="width: 100%; max-width: 800px; border-radius: 10px;">
-          </div>
-        </div>
-
-        <div class="placeholder" style="color: var(--text);">
-          <strong>Qualitative Results</strong>
-          Segmentation quality degrades significantly at larger distances due to increased blur and occlusion. DINOv2 maintains coarse semantic structures even at 5 cm, while most other models fail under severe mud contamination. DiffUIR produces the best visual restoration but visible artifacts remain in heavily degraded regions.
-          
-          <div style="margin: 16px 0; text-align: center;">
-            <img src="./assets/clp_seg_figure.png" alt="Qualitative Results" style="width: 100%; border-radius: 10px;">
-          </div>
-        </div>
+        </p>
       </div>
-    </section>
 
-    <section class="section">
-      <h2>Conclusion</h2>
-      <div class="grid-2">
-        <div class="placeholder" style="color: var(--text);">
-          <strong>Conclusion</strong>
+      <img class="nf-img" src="./assets/clp_overview.png" alt="Dataset Overview" style="border-radius:6px; max-width:860px; margin:0 auto;">
+
+      <div class="grid-2" style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:2rem;">
+        <img class="nf-img" src="./assets/clp_statistics_1.png" alt="Scene-level statistics" style="border-radius:6px;">
+        <img class="nf-img" src="./assets/clp_statistics_2.png" alt="Object distribution" style="border-radius:6px;">
+      </div>
+
+      <p style="margin:1.5rem auto 0; max-width:800px; font-size:1.05rem; line-height:1.8; color:#4a4a4a;">
+        600 scenes captured across diverse indoor/outdoor environments, day/night, and three camera angles (up, horizontal, down). The dataset contains <strong>4,800 degraded images</strong> (600 scenes &times; 2 refs &times; 4 distances), <strong>125 semantic classes</strong> with 19,203 annotated instances, and a 480 / 120 scene train/test split.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== EXPERIMENTS ===== -->
+  <section style="padding:3rem 1.5rem; border-top:1px solid #ededed;">
+    <div style="max-width:960px; margin:0 auto;">
+      <h2 style="margin:0 0 1.5rem; text-align:center; font-family:'Google Sans','Noto Sans',sans-serif; font-size:2rem; font-weight:600; color:#363636;">Experiments</h2>
+
+      <h3 style="margin:0 0 .75rem; font-family:'Google Sans','Noto Sans',sans-serif; font-size:1.4rem; font-weight:600; color:#363636;">Quantitative Results</h3>
+      <p style="margin:0 0 1.25rem; font-size:1.05rem; line-height:1.8; text-align:justify; color:#4a4a4a;">
+        We benchmark 12 models across segmentation and restoration tasks. DINOv2 achieves the best overall mIoU (47.2%), while DiffUIR leads restoration with 27.92 dB PSNR. Domain Generalization methods consistently outperform Domain Adaptation despite having no access to contaminated training data.
+      </p>
+      <div style="display:flex; flex-direction:column; gap:1.25rem; align-items:center;">
+        <img class="nf-img" src="./assets/clp_seg_table.png" alt="Segmentation Table" style="border-radius:6px; max-width:820px;">
+        <img class="nf-img" src="./assets/clp_res_table.png" alt="Restoration Table" style="border-radius:6px; max-width:820px;">
+      </div>
+
+      <h3 style="margin:2.5rem 0 .75rem; font-family:'Google Sans','Noto Sans',sans-serif; font-size:1.4rem; font-weight:600; color:#363636;">Qualitative Results</h3>
+      <p style="margin:0 0 1.25rem; font-size:1.05rem; line-height:1.8; text-align:justify; color:#4a4a4a;">
+        Segmentation quality degrades significantly at larger distances due to increased blur and occlusion. DINOv2 maintains coarse semantic structures even at 5 cm, while most other models fail under severe mud contamination. DiffUIR produces the best visual restoration but visible artifacts remain in heavily degraded regions.
+      </p>
+      <img class="nf-img" src="./assets/clp_seg_figure.png" alt="Qualitative Results" style="border-radius:6px;">
+    </div>
+  </section>
+
+  <!-- ===== CONCLUSION ===== -->
+  <section style="padding:3rem 1.5rem; border-top:1px solid #ededed;">
+    <div style="max-width:960px; margin:0 auto;">
+      <h2 style="margin:0 0 1.5rem; text-align:center; font-family:'Google Sans','Noto Sans',sans-serif; font-size:2rem; font-weight:600; color:#363636;">Conclusion</h2>
+      <div style="max-width:800px; margin:0 auto;">
+        <p style="margin:0 0 1.1rem; font-size:1.125rem; line-height:1.8; text-align:justify; color:#4a4a4a;">
           CLP provides a real-world benchmark for robust perception under realistic lens-protector contamination, offering paired images, dense semantic labels, and multi-distance captures. Our experiments establish diverse baselines for segmentation and restoration, revealing that domain generalization and foundation model pretraining are key to robustness.
-        </div>
-        <div class="placeholder" style="color: var(--text);">
-          <strong>Limitation / Future Work</strong>
-          Current captures are limited to smartphone cameras; extending to automotive or surveillance setups remains future work. Data scaling experiments show diminishing returns, suggesting more diverse scene collection could be beneficial. Task-aware restoration is a promising direction for improving perception under contamination.
-        </div>
+        </p>
+        <p style="margin:0; font-size:1.125rem; line-height:1.8; text-align:justify; color:#4a4a4a;">
+          Current captures are limited to smartphone cameras; extending to automotive or surveillance setups remains future work. Task-aware restoration is a promising direction for improving perception under contamination.
+        </p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="section">
-      <h2>Dataset Access</h2>
-      <div class="grid">
-        <div class="placeholder">
-          <strong>Download</strong>
-          Coming Soon
-        </div>
-        <!-- Submission Placeholder (not needed for now)
-        <div class="placeholder">
-          <strong>Submission Placeholder</strong>
-          Put benchmark submission or leaderboard link here later.
-        </div>
-        -->
-        <!-- Code Placeholder (not needed for now)
-        <div class="placeholder">
-          <strong>Code Placeholder</strong>
-          Put training / evaluation code link here later.
-        </div>
-        -->
-      </div>
-    </section>
-    
-    <section id="citation" class="section">
-      <h2>Citation</h2>
-      <div class="bibtex">
-        <pre id="bibtex">@inproceedings{park2026clp,
+  <!-- ===== BIBTEX ===== -->
+  <section style="padding:3rem 1.5rem; border-top:1px solid #ededed;">
+    <div style="max-width:960px; margin:0 auto;">
+      <h2 style="margin:0 0 1.25rem; font-family:'Google Sans','Noto Sans',sans-serif; font-size:2rem; font-weight:600; color:#363636;">BibTeX</h2>
+      <pre style="margin:0; overflow-x:auto; background:#f5f5f5; padding:1.25rem; border-radius:6px; font-family:'Castoro', ui-monospace, monospace; font-size:.95rem; line-height:1.6; color:#363636; text-align:left;">@inproceedings{park2026clp,
   title     = {CLP: A Real-World Dataset of Contaminated Lens Protectors for Robust Semantic Segmentation},
   author    = {Park, Sungyong and Choi, Sooyoung and Koh, Hyunseo and Choi, Youngjae and Kim, Heewon},
-  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
   year      = {2026}
 }</pre>
-        <div class="copy-row">
-          <a class="button" href="#" onclick="navigator.clipboard.writeText(document.getElementById('bibtex').innerText); this.textContent='Copied'; return false;">Copy BibTeX</a>
-        </div>
-      </div>
-    </section>
+    </div>
+  </section>
 
-    <footer class="footer">
-      <p>© 2026 CLP Project. All rights reserved.</p>
-    </footer>
-  </main>
+  <!-- ===== FOOTER ===== -->
+  <footer style="padding:3rem 1.5rem; border-top:1px solid #ededed; background:#fafafa;">
+    <div style="max-width:760px; margin:0 auto; text-align:center; font-size:.9rem; line-height:1.7; color:#7a7a7a;">
+      <p style="margin:0 0 .5rem;">&copy; 2026 CLP Project. All rights reserved.</p>
+      <p style="margin:0;">
+        This website is licensed under a <a href="#" style="color:hsl(204,86%,53%);">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+        Website template borrowed from <a href="https://nerfies.github.io/" style="color:hsl(204,86%,53%);">Nerfies</a>.
+      </p>
+    </div>
+  </footer>
+
+</main>
 </body>
 </html>
