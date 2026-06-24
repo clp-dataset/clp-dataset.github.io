@@ -160,7 +160,7 @@
 
       <h3 style="margin:0 0 .75rem; font-family:'Google Sans','Noto Sans',sans-serif; font-size:1.4rem; font-weight:600; color:#363636;">Segmentation Results</h3>
       <p style="margin:0 0 1.25rem; font-size:1.05rem; line-height:1.8; text-align:justify; color:#4a4a4a;">
-        DINOv2 achieves the best average mIoU (47.2%) across contamination types, while Domain Generalization methods consistently outperform Domain Adaptation methods without access to contaminated training images. Qualitative results show that segmentation quality degrades at larger lens-to-protector distances, but DINOv2 preserves coarse semantic structures even under severe mud contamination.
+        Domain Generalization methods consistently outperform Domain Adaptation methods, even though they are trained only on clean images while DA methods use unlabeled contaminated data. This suggests that robust, domain-invariant representations matter more than simply adapting to contaminated images. DINOv2 shows the strongest overall robustness, likely due to its large-scale foundation pretraining, and preserves coarse semantic structures even under severe mud contamination at larger lens-to-protector distances.
       </p>
       <div style="display:flex; flex-direction:column; gap:1.25rem; align-items:center;">
         <img class="nf-img" src="./assets/clp_seg_table.png" alt="Segmentation Results Table" style="border-radius:6px; max-width:820px;">
