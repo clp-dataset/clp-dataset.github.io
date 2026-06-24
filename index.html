@@ -127,7 +127,7 @@
       <h2 style="margin:0 0 1rem; text-align:center; font-family:'Google Sans','Noto Sans',sans-serif; font-size:2rem; font-weight:600; color:#363636;">CLP Dataset</h2>
       <div style="max-width:800px; margin:0 auto 2rem;">
         <p style="margin:0; font-size:1.125rem; line-height:1.8; text-align:justify; color:#4a4a4a;">
-          CLP captures real lens-protector contamination using a custom 3D-printed smartphone holder that fixes glass plates at four precise distances in front of the camera lens.
+          CLP captures real lens-protector contamination with a custom 3D-printed smartphone holder that fixes glass plates at 0, 1, 3, and 5 cm in front of the camera lens. This controlled setup enables paired captures of clean references and contaminated images under realistic lens-protector degradations.
         </p>
       </div>
       <img class="nf-img" src="./assets/clp_overview.png" alt="Dataset Overview" style="border-radius:6px; max-width:860px; margin:0 auto 2.5rem;">
@@ -146,7 +146,7 @@
 
       <h3 style="margin:2.5rem 0 .75rem; font-family:'Google Sans','Noto Sans',sans-serif; font-size:1.4rem; font-weight:600; color:#363636;">Analysis</h3>
       <p style="margin:0; max-width:900px; font-size:1.05rem; line-height:1.8; color:#4a4a4a;">
-        The scene-level and object-level distributions show that CLP covers balanced contamination types, viewpoints, places, and lighting conditions, while retaining the long-tailed object distribution typical of real semantic segmentation datasets.
+        The histogram analysis shows that clean protector images remain close to the original images, while mud, water droplets, and condensation introduce distinct physical degradations. The distance analysis further shows that contamination behavior changes with lens-to-protector distance: clean distortion increases with distance, condensation becomes more defocused, and localized occlusions such as mud and water droplets shift spatially while retaining severe artifacts.
       </p>
       <div style="display:flex; flex-direction:column; gap:1.25rem; align-items:center; margin-top:1.25rem;">
         <img class="nf-img" src="./assets/figure4.png" alt="Dataset Analysis" style="border-radius:6px; max-width:860px;">
@@ -162,7 +162,7 @@
 
       <h3 style="margin:0 0 .75rem; font-family:'Google Sans','Noto Sans',sans-serif; font-size:1.4rem; font-weight:600; color:#363636;">Segmentation Results</h3>
       <p style="margin:0 0 1.25rem; font-size:1.05rem; line-height:1.8; text-align:justify; color:#4a4a4a;">
-        Domain Generalization methods consistently outperform Domain Adaptation methods, even though they are trained only on clean images while DA methods use unlabeled contaminated data. This suggests that robust, domain-invariant representations matter more than simply adapting to contaminated images. DINOv2 shows the strongest overall robustness, likely due to its large-scale foundation pretraining, and preserves coarse semantic structures even under severe mud contamination at larger lens-to-protector distances.
+        Severe mud contamination causes the largest segmentation degradation, especially as the lens-to-protector distance increases. A key finding is that Domain Generalization methods consistently outperform Domain Adaptation methods, even though DG models are trained only on clean images while DA models use unlabeled contaminated data. DINOv2 achieves the strongest overall robustness, likely due to large-scale foundation pretraining, and preserves coarse semantic structures under severe distortion.
       </p>
       <div style="display:flex; flex-direction:column; gap:1.25rem; align-items:center;">
         <img class="nf-img" src="./assets/clp_seg_table.png" alt="Segmentation Results Table" style="border-radius:6px; max-width:820px;">
@@ -171,7 +171,7 @@
 
       <h3 style="margin:2.5rem 0 .75rem; font-family:'Google Sans','Noto Sans',sans-serif; font-size:1.4rem; font-weight:600; color:#363636;">Restoration Results</h3>
       <p style="margin:0 0 1.25rem; font-size:1.05rem; line-height:1.8; text-align:justify; color:#4a4a4a;">
-        DiffUIR achieves the best overall restoration performance with 27.92 dB PSNR, followed by UniRestore with 26.85 dB. DiffUIR produces the strongest visual restoration on water and condensation, but visible artifacts remain in severely degraded regions.
+        DiffUIR and UniRestore achieve the strongest overall restoration performance, showing that generative restoration priors are effective for the complex degradation patterns in CLP. However, visible artifacts remain in severely degraded regions, indicating that restoration under real lens-protector contamination remains challenging.
       </p>
       <div style="display:flex; flex-direction:column; gap:1.25rem; align-items:center;">
         <img class="nf-img" src="./assets/clp_res_table.png" alt="Restoration Results Table" style="border-radius:6px; max-width:820px;">
@@ -186,7 +186,7 @@
       <h2 style="margin:0 0 1.5rem; text-align:center; font-family:'Google Sans','Noto Sans',sans-serif; font-size:2rem; font-weight:600; color:#363636;">Conclusion</h2>
       <div style="max-width:800px; margin:0 auto;">
         <p style="margin:0 0 1.1rem; font-size:1.125rem; line-height:1.8; text-align:justify; color:#4a4a4a;">
-          CLP provides a real-world benchmark for robust perception under realistic lens-protector contamination, offering paired images, dense semantic labels, and multi-distance captures. Our experiments establish diverse baselines for segmentation and restoration, revealing that domain generalization and foundation model pretraining are key to robustness.
+          CLP provides a real-world benchmark for robust perception under realistic lens-protector contamination, offering paired clean and contaminated images, dense semantic labels, aligned restoration targets, and multi-distance captures. Our experiments establish segmentation and restoration baselines and reveal how real physical contamination affects modern perception models.
         </p>
         <p style="margin:0; font-size:1.125rem; line-height:1.8; text-align:justify; color:#4a4a4a;">
           Current captures are limited to smartphone cameras; extending to automotive or surveillance setups remains future work. Task-aware restoration is a promising direction for improving perception under contamination.
