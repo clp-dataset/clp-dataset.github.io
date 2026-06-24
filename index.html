@@ -77,14 +77,14 @@
         <a class="nf-btn" href="./paper.pdf" style="display:inline-flex; align-items:center; gap:.5rem; height:2.5em; padding:0 1.1em; border-radius:9999px; background:#363636; color:#fff; font-size:1rem; transition:background .15s;">
           <i class="fa-solid fa-file-pdf"></i><span>Paper</span>
         </a>
-        <a class="nf-btn" href="#" style="display:inline-flex; align-items:center; gap:.5rem; height:2.5em; padding:0 1.1em; border-radius:9999px; background:#363636; color:#fff; font-size:1rem; transition:background .15s;">
-          <i class="fa-solid fa-file-lines"></i><span>arXiv</span>
+        <a class="nf-btn" href="./supplementary.pdf" style="display:inline-flex; align-items:center; gap:.5rem; height:2.5em; padding:0 1.1em; border-radius:9999px; background:#363636; color:#fff; font-size:1rem; transition:background .15s;">
+          <i class="fa-solid fa-file-lines"></i><span>Supplementary</span>
         </a>
-        <a class="nf-btn" href="#" style="display:inline-flex; align-items:center; gap:.5rem; height:2.5em; padding:0 1.1em; border-radius:9999px; background:#363636; color:#fff; font-size:1rem; transition:background .15s;">
-          <i class="fa-brands fa-github"></i><span>Code</span>
-        </a>
-        <a class="nf-btn" href="#dataset" style="display:inline-flex; align-items:center; gap:.5rem; height:2.5em; padding:0 1.1em; border-radius:9999px; background:#363636; color:#fff; font-size:1rem; transition:background .15s;">
+        <a class="nf-btn" href="https://drive.google.com/drive/folders/1mB1MGo2KZKAX4Gnln7ysn6IZJpggV73A?usp=sharing" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:.5rem; height:2.5em; padding:0 1.1em; border-radius:9999px; background:#363636; color:#fff; font-size:1rem; transition:background .15s;">
           <i class="fa-solid fa-database"></i><span>Dataset</span>
+        </a>
+        <a class="nf-btn" href="#citation" onclick="copyBibtex(event, this)" style="display:inline-flex; align-items:center; gap:.5rem; height:2.5em; padding:0 1.1em; border-radius:9999px; background:#363636; color:#fff; font-size:1rem; transition:background .15s;">
+          <i class="fa-solid fa-quote-right"></i><span>BibTeX</span>
         </a>
       </div>
     </div>
@@ -178,10 +178,10 @@
   </section>
 
   <!-- ===== BIBTEX ===== -->
-  <section style="padding:3rem 1.5rem; border-top:1px solid #ededed;">
+  <section id="citation" style="padding:3rem 1.5rem; border-top:1px solid #ededed;">
     <div style="max-width:960px; margin:0 auto;">
       <h2 style="margin:0 0 1.25rem; font-family:'Google Sans','Noto Sans',sans-serif; font-size:2rem; font-weight:600; color:#363636;">BibTeX</h2>
-      <pre style="margin:0; overflow-x:auto; background:#f5f5f5; padding:1.25rem; border-radius:6px; font-family:'Castoro', ui-monospace, monospace; font-size:.95rem; line-height:1.6; color:#363636; text-align:left;">@inproceedings{park2026clp,
+      <pre id="bibtex" style="margin:0; overflow-x:auto; background:#f5f5f5; padding:1.25rem; border-radius:6px; font-family:'Castoro', ui-monospace, monospace; font-size:.95rem; line-height:1.6; color:#363636; text-align:left;">@inproceedings{park2026clp,
   title     = {CLP: A Real-World Dataset of Contaminated Lens Protectors for Robust Semantic Segmentation},
   author    = {Park, Sungyong and Choi, Sooyoung and Koh, Hyunseo and Choi, Youngjae and Kim, Heewon},
   booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
@@ -202,5 +202,17 @@
   </footer>
 
 </main>
+<script>
+  function copyBibtex(event, button) {
+    event.preventDefault();
+    const bibtex = document.getElementById('bibtex').innerText;
+    navigator.clipboard.writeText(bibtex).then(() => {
+      const label = button.querySelector('span');
+      const previous = label.textContent;
+      label.textContent = 'Copied';
+      setTimeout(() => { label.textContent = previous; }, 1400);
+    });
+  }
+</script>
 </body>
 </html>
