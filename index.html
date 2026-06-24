@@ -81,7 +81,7 @@
           <i class="fa-solid fa-file-lines"></i><span>Supplementary</span>
         </a>
         <a class="nf-btn" href="https://github.com/clp-dataset/clp-dataset.github.io" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:.5rem; height:2.5em; padding:0 1.1em; border-radius:9999px; background:#363636; color:#fff; font-size:1rem; transition:background .15s;">
-          <i class="fa-solid fa-database"></i><span>Dataset</span>
+          <i class="fa-solid fa-database"></i><span>CLP Dataset</span>
         </a>
         <a class="nf-btn" href="#citation" onclick="copyBibtex(event, this)" style="display:inline-flex; align-items:center; gap:.5rem; height:2.5em; padding:0 1.1em; border-radius:9999px; background:#363636; color:#fff; font-size:1rem; transition:background .15s;">
           <i class="fa-solid fa-quote-right"></i><span>BibTeX</span>
@@ -124,23 +124,27 @@
   <!-- ===== DATASET ===== -->
   <section id="dataset" style="padding:3rem 1.5rem; border-top:1px solid #ededed;">
     <div style="max-width:960px; margin:0 auto;">
-      <h2 style="margin:0 0 1rem; text-align:center; font-family:'Google Sans','Noto Sans',sans-serif; font-size:2rem; font-weight:600; color:#363636;">Dataset</h2>
+      <h2 style="margin:0 0 1rem; text-align:center; font-family:'Google Sans','Noto Sans',sans-serif; font-size:2rem; font-weight:600; color:#363636;">CLP Dataset</h2>
       <div style="max-width:800px; margin:0 auto 2rem;">
         <p style="margin:0; font-size:1.125rem; line-height:1.8; text-align:justify; color:#4a4a4a;">
           CLP captures real lens-protector contamination using a custom 3D-printed smartphone holder that fixes glass plates at four precise distances in front of the camera lens.
         </p>
       </div>
 
-      <img class="nf-img" src="./assets/clp_overview.png" alt="Dataset Overview" style="border-radius:6px; max-width:860px; margin:0 auto;">
+      <h3 style="margin:0 0 .75rem; font-family:'Google Sans','Noto Sans',sans-serif; font-size:1.4rem; font-weight:600; color:#363636;">Collection Setup</h3>
+      <img class="nf-img" src="./assets/figure3.png" alt="Collection Setup" style="border-radius:6px; max-width:860px; margin:0 auto;">
 
-      <div class="grid-2" style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:2rem;">
-        <img class="nf-img" src="./assets/clp_statistics_1.png" alt="Scene-level statistics" style="border-radius:6px;">
-        <img class="nf-img" src="./assets/clp_statistics_2.png" alt="Object distribution" style="border-radius:6px;">
-      </div>
-
-      <p style="margin:1.5rem auto 0; max-width:800px; font-size:1.05rem; line-height:1.8; color:#4a4a4a;">
-        600 scenes captured across diverse indoor/outdoor environments, day/night, and three camera angles (up, horizontal, down). The dataset contains <strong>4,800 degraded images</strong> (600 scenes &times; 2 refs &times; 4 distances), <strong>125 semantic classes</strong> with 19,203 annotated instances, and a 480 / 120 scene train/test split.
+      <h3 style="margin:2.5rem 0 .75rem; font-family:'Google Sans','Noto Sans',sans-serif; font-size:1.4rem; font-weight:600; color:#363636;">Statistics</h3>
+      <p style="margin:0 auto 1.25rem; max-width:800px; font-size:1.05rem; line-height:1.8; color:#4a4a4a;">
+        600 scenes were captured across diverse indoor/outdoor environments, day/night conditions, and three camera angles (up, horizontal, down). The dataset contains <strong>4,800 degraded images</strong> (600 scenes &times; 2 refs &times; 4 distances), <strong>125 semantic classes</strong> with 19,203 annotated instances, and a 480 / 120 scene train/test split.
       </p>
+      <img class="nf-img" src="./assets/figure4.png" alt="Statistics" style="border-radius:6px; max-width:860px; margin:0 auto;">
+
+      <h3 style="margin:2.5rem 0 .75rem; font-family:'Google Sans','Noto Sans',sans-serif; font-size:1.4rem; font-weight:600; color:#363636;">Analysis</h3>
+      <p style="margin:0 auto; max-width:800px; font-size:1.05rem; line-height:1.8; color:#4a4a4a;">
+        The scene-level and object-level distributions show that CLP covers balanced contamination types, viewpoints, places, and lighting conditions, while retaining the long-tailed object distribution typical of real semantic segmentation datasets.
+      </p>
+      <img class="nf-img" src="./assets/figure5.png" alt="Analysis" style="border-radius:6px; max-width:860px; margin:1.25rem auto 0;">
     </div>
   </section>
 
@@ -158,11 +162,17 @@
         <img class="nf-img" src="./assets/clp_res_table.png" alt="Restoration Table" style="border-radius:6px; max-width:820px;">
       </div>
 
-      <h3 style="margin:2.5rem 0 .75rem; font-family:'Google Sans','Noto Sans',sans-serif; font-size:1.4rem; font-weight:600; color:#363636;">Qualitative Results</h3>
+      <h3 style="margin:2.5rem 0 .75rem; font-family:'Google Sans','Noto Sans',sans-serif; font-size:1.4rem; font-weight:600; color:#363636;">Segmentation Qualitative Results</h3>
       <p style="margin:0 0 1.25rem; font-size:1.05rem; line-height:1.8; text-align:justify; color:#4a4a4a;">
-        Segmentation quality degrades significantly at larger distances due to increased blur and occlusion. DINOv2 maintains coarse semantic structures even at 5 cm, while most other models fail under severe mud contamination. DiffUIR produces the best visual restoration but visible artifacts remain in heavily degraded regions.
+        Segmentation quality degrades significantly at larger distances due to increased blur and occlusion. DINOv2 maintains coarse semantic structures even at 5 cm, while most other models fail under severe mud contamination.
       </p>
-      <img class="nf-img" src="./assets/clp_seg_figure.png" alt="Qualitative Results" style="border-radius:6px;">
+      <img class="nf-img" src="./assets/clp_seg_figure.png" alt="Segmentation Qualitative Results" style="border-radius:6px;">
+
+      <h3 style="margin:2.5rem 0 .75rem; font-family:'Google Sans','Noto Sans',sans-serif; font-size:1.4rem; font-weight:600; color:#363636;">Restoration Qualitative Results</h3>
+      <p style="margin:0; font-size:1.05rem; line-height:1.8; text-align:justify; color:#4a4a4a;">
+        DiffUIR produces the best visual restoration, but visible artifacts remain in heavily degraded regions.
+      </p>
+      <img class="nf-img" src="./assets/figure9.png" alt="Restoration Qualitative Results" style="border-radius:6px; margin-top:1.25rem;">
     </div>
   </section>
 
