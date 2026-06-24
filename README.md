@@ -1,4 +1,4 @@
-# CLP: A Real-World Dataset of Contaminated Lens Protectors for Robust Semantic Segmentation (CVPR 2026)
+## CLP: A Real-World Dataset of Contaminated Lens Protectors for Robust Semantic Segmentation (CVPR 2026)
 
 A benchmark for semantic segmentation and image restoration under **lens-protector
 contamination**. 600 indoor/outdoor scenes are captured through a transparent
