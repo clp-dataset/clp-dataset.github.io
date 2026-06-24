@@ -225,15 +225,26 @@
   </footer>
 
 </main>
+<div id="copy-toast" style="position:fixed; left:50%; bottom:2rem; transform:translate(-50%, 1rem); opacity:0; pointer-events:none; z-index:1000; display:inline-flex; align-items:center; gap:.55rem; background:#fff; color:#363636; padding:.7rem 1.05rem; border:1px solid #e6e6e6; border-radius:9999px; font-family:'Google Sans','Noto Sans',sans-serif; font-size:.95rem; font-weight:600; box-shadow:0 8px 24px rgba(10,10,10,.16); transition:opacity .18s ease, transform .18s ease;">
+  <span style="display:inline-flex; align-items:center; justify-content:center; width:1.35rem; height:1.35rem; border-radius:50%; background:#22c55e; color:#fff; font-size:.85rem; line-height:1;">✓</span>
+  <span>Copied</span>
+</div>
 <script>
   function copyBibtex(event, button) {
     event.preventDefault();
     const bibtex = document.getElementById('bibtex').innerText;
     navigator.clipboard.writeText(bibtex).then(() => {
+      const toast = document.getElementById('copy-toast');
+      toast.style.opacity = '1';
+      toast.style.transform = 'translate(-50%, 0)';
       const label = button.querySelector('span');
       const previous = label.textContent;
       label.textContent = 'Copied';
-      setTimeout(() => { label.textContent = previous; }, 1400);
+      setTimeout(() => {
+        label.textContent = previous;
+        toast.style.opacity = '0';
+        toast.style.transform = 'translate(-50%, 1rem)';
+      }, 1600);
     });
   }
 </script>
