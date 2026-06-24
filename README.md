@@ -6,6 +6,8 @@ protector contaminated by different substances at four lens-to-protector distanc
 yielding 4,800 degraded images paired with their clean references and dense
 segmentation labels.
 
+[![Download CLP Dataset from Google Drive](https://img.shields.io/badge/Download-Google%20Drive-4285F4?style=for-the-badge&logo=googledrive&logoColor=white)](https://drive.google.com/drive/folders/1mB1MGo2KZKAX4Gnln7ysn6IZJpggV73A?usp=sharing)
+
 ## Overview
 | | |
 |---|---|
